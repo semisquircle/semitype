@@ -7,11 +7,14 @@ import re
 import psMat
 
 FONT_PREFS = [
-    {"name": "b", "spacing": 12, "space": 66},
-    {"name": "c", "spacing": 12, "space": 66},
-    {"name": "d", "spacing": 12, "space": 66},
-    {"name": "e", "spacing": 12, "space": 66},
+    {"name": "b", "num_squares": 13, "square_size": 64, "space_size": 14},
+    {"name": "c", "num_squares": 11, "square_size": 80, "space_size": 12},
+    {"name": "d", "num_squares": 11, "square_size": 70, "space_size": 23},
+    {"name": "e", "num_squares": 9, "square_size": 104, "space_size": 8},
+    {"name": "f", "num_squares": 9, "square_size": 96, "space_size": 17}
 ]
+
+OUTPUT_PATH = "download"
 
 # SVG namespace handling
 SVG_NS = "http://www.w3.org/2000/svg"
@@ -39,28 +42,27 @@ def round_path(d, decimals=2):
     return number_re.sub(repl, d)
 
 
-def generate_font(index, family):
-    font_pref = FONT_PREFS[index]
-
-    svg_file = f'{font_pref["name"]}.svg'
-    output_path = f"download/{family}"
-    ttf_path = f"{output_path}/ttf"
-    otf_path = f"{output_path}/otf"
-    woff2_path = f"{output_path}/woff2"
+def generate_font(font_pref, family):
+    svg_file = f'svg/{font_pref["name"]}.svg'
 
     # Create font
     font = fontforge.font()
-    font.fontname = f'Tombaugh{family.capitalize()}-{font_pref["name"]}'
-    font.familyname = "Tombaugh"
-    font.fullname = f'Tombaugh {family.capitalize()} {font_pref["name"]}'
+    font.familyname = "Tombaugh Display" if family == "display" else "Tombaugh"
+    font.fontname = f'{font.familyname.replace(" ", "")}-{font_pref["name"]}'
+    font.fullname = f'{font.familyname} {font_pref["name"]}'
+    font.weight = font_pref["name"]
+    font.version = "1.0"
+
+    cap_top = 2 * (font_pref["square_size"] + font_pref["space_size"])
+    descent = 2 * (font_pref["square_size"] + font_pref["space_size"])
 
     if family == "regular":
         font.em = 1000
-        font.ascent = 800
-        font.descent = 200
+        font.ascent = 1000 - cap_top
+        font.descent = descent
     else:
-        font.em = 700
-        font.ascent = 700
+        font.em = 1000 - cap_top - descent
+        font.ascent = 1000 - cap_top - descent
         font.descent = 0
 
     # Load SVG
@@ -118,7 +120,7 @@ def generate_font(index, family):
 
             xmin, ymin, xmax, ymax = glyph.boundingBox()
             if family == "display":
-                glyph.transform(psMat.translate(-xmin, -ymin))
+                glyph.transform(psMat.translate(-xmin, cap_top))
             glyph.width = int(xmax - xmin)
 
         finally:
@@ -133,28 +135,30 @@ def generate_font(index, family):
     glyph_names = [g.glyphname for g in font.glyphs() if g.unicode != -1]
     for left in glyph_names:
         for right in glyph_names:
-            font[left].addPosSub("kern_subtable", right, font_pref["spacing"])
+            font[left].addPosSub("kern_subtable", right, font_pref["space_size"])
 
     # Space character
     space = font.createChar(ord(" "))
     space.glyphname = "space"
-    space.width = font_pref["space"]
+    space.width = font_pref["square_size"]
 
     # Generate
-    if os.path.exists(output_path):
-        shutil.rmtree(output_path)
-    os.makedirs(ttf_path)
-    os.makedirs(otf_path)
-    os.makedirs(woff2_path)
-    font.generate(f"{ttf_path}/{font.fontname}.ttf")
-    font.generate(f"{otf_path}/{font.fontname}.otf")
-    font.generate(f"{woff2_path}/{font.fontname}.woff2")
+    font.generate(f"{OUTPUT_PATH}/{family}/ttf/{font.fontname}.ttf")
+    font.generate(f"{OUTPUT_PATH}/{family}/otf/{font.fontname}.otf")
+    font.generate(f"{OUTPUT_PATH}/{family}/woff2/{font.fontname}.woff2")
 
     print(f"✅ Generated TTF, OTF, and WOFF2 for {font.fullname}!")
 
 
 if __name__ == "__main__":
-    # for f in range(len(font_prefs)):
-    # generate_font(f)
-    generate_font(3, "regular")
-    generate_font(3, "display")
+    if os.path.exists(OUTPUT_PATH):
+        shutil.rmtree(OUTPUT_PATH)
+        
+    for family in ["regular", "display"]:
+        os.makedirs(f'{OUTPUT_PATH}/{family}/ttf')
+        os.makedirs(f'{OUTPUT_PATH}/{family}/otf')
+        os.makedirs(f'{OUTPUT_PATH}/{family}/woff2')
+
+    for font_pref in FONT_PREFS:
+        generate_font(font_pref, "regular")
+        generate_font(font_pref, "display")

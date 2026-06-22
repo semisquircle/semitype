@@ -1,0 +1,19 @@
+13 squares, 12 spaces
+Square: 76.0, Space: 1.0, Corner: 38.0, Usability: 0.07236842105263158
+Square: 64.0, Space: 14.0, Corner: 32.0, Usability: 0.8311688311688311
+Square: 52.0, Space: 27.0, Corner: 26.0, Usability: 0.35016835016835013
+
+11 squares, 10 spaces
+Square: 90.0, Space: 1.0, Corner: 45.0, Usability: 0.06111111111111111
+Square: 80.0, Space: 12.0, Corner: 40.0, Usability: 0.825
+Square: 70.0, Space: 23.0, Corner: 35.0, Usability: 0.5533596837944664
+Square: 60.0, Space: 34.0, Corner: 30.0, Usability: 0.32085561497326204
+Square: 50.0, Space: 45.0, Corner: 25.0, Usability: 0.20202020202020202
+
+9 squares, 8 spaces
+Square: 104.0, Space: 8.0, Corner: 52.0, Usability: 0.4230769230769231
+Square: 96.0, Space: 17.0, Corner: 48.0, Usability: 0.9739583333333333
+Square: 88.0, Space: 26.0, Corner: 44.0, Usability: 0.6153846153846154
+Square: 80.0, Space: 35.0, Corner: 40.0, Usability: 0.41558441558441556
+Square: 72.0, Space: 44.0, Corner: 36.0, Usability: 0.2975206611570248
+Square: 64.0, Space: 53.0, Corner: 32.0, Usability: 0.2195540308747856
