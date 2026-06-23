@@ -1,4 +1,4 @@
-def derive(num_squares, em=1000):
+def derive(num_squares, em=1002):
     print(f'{num_squares} squares, {num_squares - 1} spaces')
 
     k = 0
@@ -18,7 +18,7 @@ def derive(num_squares, em=1000):
         col_3 = round(a + b + a + b + a, k_dig)
         cap_top = a + b + a + b
         descent = a + b + a + b
-        cap_height = round(1000 - cap_top - descent, k_dig)
+        cap_height = round(em - cap_top - descent, k_dig)
 
         is_col_2_int = col_2.is_integer()
         is_col_3_int = col_3.is_integer()

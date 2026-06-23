@@ -1,0 +1,35 @@
+html, body {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	background: black;
+}
+
+#tombaugh-container {
+	width: 100%;
+	padding: 50px;
+	box-sizing: border-box;
+}
+
+.tombaugh {
+	font-family: "Tombaugh Display";
+	font-size: 110px;
+	line-height: 1;
+	color: white;
+}
+.italic { font-style: italic; }
+.tombaugh + .tombaugh { margin-top: 10px; }
+.tombaugh-hero {
+	font-weight: 300;
+	color: #ff5705;
+}
+.tombaugh-hero.italic { margin-bottom: 50px; }
+.tombaugh-b { font-weight: 400; }
+.tombaugh-c { font-weight: 500; }
+.tombaugh-d { font-weight: 600; }
+.tombaugh-e { font-weight: 700; }
+.tombaugh-f { font-weight: 800; }
+.tombaugh-g { font-weight: 900; }

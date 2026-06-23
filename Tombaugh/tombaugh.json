@@ -1,0 +1,113 @@
+{
+	"glyph_widths": {
+		"A": "101",
+		"B": "101",
+		"C": "101",
+		"D": "101",
+		"E": "101",
+		"F": "101",
+		"G": "101",
+		"H": "101",
+		"I": "1",
+		"J": "101",
+		"K": "101",
+		"L": "101",
+		"M": "10101",
+		"N": "10101",
+		"O": "101",
+		"P": "101",
+		"Q": "101",
+		"R": "101",
+		"S": "101",
+		"T": "101",
+		"U": "101",
+		"V": "101",
+		"W": "10101",
+		"X": "101",
+		"Y": "101",
+		"Z": "101",
+		"0": "101",
+		"1": "1",
+		"2": "101",
+		"3": "101",
+		"4": "101",
+		"5": "101",
+		"6": "101",
+		"7": "101",
+		"8": "101",
+		"9": "101",
+		"Period": "1",
+		"Exclamation Point": "1",
+		"Question Mark": "101",
+		"Colon": "1"
+	},
+    "descenders": [
+		{ "char": "g" },
+		{
+			"char": "j",
+			"kerning": "1",
+			"exceptions": ["g", "j", "y"]
+		},
+		{ "char": "p" },
+		{ "char": "q" },
+		{ "char": "y" }
+    ],
+	"fonts": [
+		{
+			"name": "Hero",
+			"weight": 300,
+			"num_squares": 13,
+			"square_size": 67,
+			"space_size": 12,
+			"em": 1015
+		},
+		{
+			"name": "b",
+			"weight": 400,
+			"num_squares": 13,
+			"square_size": 64,
+			"space_size": 14,
+			"em": 1000
+		},
+		{
+			"name": "c",
+			"weight": 500,
+			"num_squares": 11,
+			"square_size": 70,
+			"space_size": 23,
+			"em": 1000
+		},
+		{
+			"name": "d",
+			"weight": 600,
+			"num_squares": 11,
+			"square_size": 80,
+			"space_size": 12,
+			"em": 1000
+		},
+		{
+			"name": "e",
+			"weight": 700,
+			"num_squares": 9,
+			"square_size": 88,
+			"space_size": 26,
+			"em": 1000
+		},
+		{
+			"name": "f",
+			"weight": 800,
+			"num_squares": 9,
+			"square_size": 96,
+			"space_size": 17,
+			"em": 1000
+		},
+		{
+			"name": "g",
+			"weight": 900,
+			"num_squares": 9,
+			"square_size": 104,
+			"space_size": 8,
+			"em": 1000
+		}
+	]
+}

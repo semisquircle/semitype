@@ -8,7 +8,7 @@
      version="1.1"
      id="svg1"
      inkscape:version="1.4.4 (dcaf3e7, 2026-05-05)"
-     sodipodi:docname="f.svg"
+     sodipodi:docname="g.svg"
      xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
      xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
      xmlns="http://www.w3.org/2000/svg"
@@ -26,7 +26,7 @@
          showguides="true"
          inkscape:zoom="0.98010284"
          inkscape:cx="339.76026"
-         inkscape:cy="689.72354"
+         inkscape:cy="690.74384"
          inkscape:window-width="1920"
          inkscape:window-height="1001"
          inkscape:window-x="-9"
@@ -1253,8 +1253,8 @@
          id="path1785"
          inkscape:label="N" />
     <path
-         d="M 0,274.00049 V 774 H 96 V 322.00049 h 16.99951 V 774 h 96 V 322.00049 h 17.00098 V 774 h 96 V 226.00049 H 48 a 48,48 135 0 0 -48,48 z"
-         style="display:none;fill:#000000;fill-opacity:1;stroke-width:64;stroke-miterlimit:12.2;stroke-opacity:0.5;paint-order:stroke fill markers"
+         d="M 322.00049,274.00049 V 774 h -96 V 322.00049 H 209.00098 V 774 h -96 V 322.00049 H 96 V 774 H 0 V 226.00049 h 274.00049 a 48,48 0 0 1 48,48 z"
+         style="display:inline;fill:#000000;fill-opacity:1;stroke-width:64;stroke-miterlimit:12.2;stroke-opacity:0.5;paint-order:stroke fill markers"
          id="path1784"
          inkscape:label="M" />
     <path

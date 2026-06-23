@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Semitype</title>
+
+	<link rel="stylesheet" href="css/fonts.css">
+	<link rel="stylesheet" href="css/web.css">
+</head>
+
+<body>
+	<svg></svg>
+
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+	<script>
+		const minWebsPerWall = 3;
+		const mouseDelta = 10;
+		let mouseCount = 0;
+		let randomXArray = [];
+		let randomYArray = [];
+
+		const svg = document.querySelector("svg");
+
+		$(document).on("mousemove", function(e) {
+			svg.innerHTML = "";
+			svg.setAttribute("viewBox", `0 0 ${window.innerWidth} ${window.innerHeight}`);
+
+			for (let wall of ["left", "right", "top", "bottom"]) {
+				for (let i = 0; i < websPerWall; i++) {
+					if (mouseCount == 0) {
+						randomXArray = Array.from({ length: websPerWall }, () => Math.random() * window.innerWidth);
+						randomYArray = Array.from({ length: websPerWall }, () => Math.random() * window.innerHeight);
+					}
+
+					switch (wall) {
+						case "left":
+							startX = 0;
+							startY = randomYArray[i];
+							break;
+						case "right":
+							startX = window.innerWidth;
+							startY = randomYArray[i];
+							break;
+						case "top":
+							startX = randomXArray[i];
+							startY = 0;
+							break;
+						case "bottom":
+							startX = randomXArray[i];
+							startY = window.innerHeight;
+							break;
+					}
+
+					const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+					path.setAttribute("d", `M ${startX} ${startY} L ${e.pageX} ${e.pageY}`);
+					svg.appendChild(path);
+				}
+			}
+
+			mouseCount = (mouseCount + 1) % mouseDelta;
+		});
+	</script>
+</body>
+
+</html>

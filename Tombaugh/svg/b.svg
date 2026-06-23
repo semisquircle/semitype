@@ -8,7 +8,7 @@
      version="1.1"
      id="svg1"
      inkscape:version="1.4.4 (dcaf3e7, 2026-05-05)"
-     sodipodi:docname="b.svg"
+     sodipodi:docname="c.svg"
      xml:space="preserve"
      xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
      xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -24,9 +24,9 @@
          inkscape:deskcolor="#505050"
          inkscape:document-units="pt"
          showguides="true"
-         inkscape:zoom="0.44610962"
-         inkscape:cx="495.39393"
-         inkscape:cy="490.91073"
+         inkscape:zoom="0.57994251"
+         inkscape:cx="356.93193"
+         inkscape:cy="656.96167"
          inkscape:window-width="1920"
          inkscape:window-height="1001"
          inkscape:window-x="-9"
@@ -1188,10 +1188,10 @@
          style="display:none;fill:#000000;fill-opacity:1;stroke-width:2;stroke-miterlimit:12.2;stroke-opacity:0.5;paint-order:stroke fill markers"
          id="path313"
          inkscape:label="4" /><path
-         d="m 0,188 v 266.00049 h 64.000488 v -234 H 78 V 468 H 0 v 64.00049 H 78 V 780 H 64.000488 V 546 H 0 v 266.00049 a 32,32 45 0 0 32,32 l 78.00049,0 a 32,32 135 0 0 32,-32 V 188 a 32,32 45 0 0 -32,-32 H 32 A 32,32 135 0 0 0,188 Z"
-         style="display:none;fill:#000000;fill-opacity:1;stroke-width:2;stroke-miterlimit:12.2;stroke-opacity:0.5;paint-order:stroke fill markers"
          id="path251"
-         inkscape:label="3" /><path
+         style="display:none;fill:#000000;fill-opacity:1;stroke-width:2;stroke-miterlimit:12.2;stroke-opacity:0.5;paint-order:stroke fill markers"
+         inkscape:label="3"
+         d="M 31.999512,156 A 32,32 0 0 0 0,187.99951 v 266.00098 h 64.000488 v -234 H 78 V 468 H 0 v 64.00049 H 78 V 780 H 64.000488 V 546 H 0 v 266.00098 a 32,32 0 0 0 31.999512,31.99951 h 78.001468 a 32,32 0 0 0 31.99951,-31.99951 V 529.5 c -0.004,-12.88776 -7.73933,-24.51488 -19.62451,-29.49902 11.88567,-4.98434 19.62051,-16.6122 19.62451,-29.50049 V 187.99951 A 32,32 0 0 0 110.00098,156 Z" /><path
          d="m 0,188 v 266.00049 h 64.000488 v -234 H 78 V 468 H 32 A 32,32 135 0 0 0,500 V 844.00049 H 142.00049 V 546 H 78 V 780 H 64.000488 V 532.00049 h 46.000002 a 32,32 135 0 0 32,-32 V 188 a 32,32 45 0 0 -32,-32 H 32 A 32,32 135 0 0 0,188 Z"
          style="display:none;fill:#000000;fill-opacity:1;stroke-width:2;stroke-miterlimit:12.2;stroke-opacity:0.5;paint-order:stroke fill markers"
          id="path189"
@@ -1259,7 +1259,7 @@
          style="display:none;fill:#000000;fill-opacity:1;stroke-width:2;stroke-miterlimit:12.2;stroke-opacity:0.5;paint-order:stroke fill markers"
          id="path1024"
          inkscape:label="N" /><path
-         d="m 0,188 v 656.00049 h 64.000488 v -624 H 78 v 624 h 64.00049 v -624 H 156 v 624 h 64.00049 V 156 H 32 A 32,32 135 0 0 0,188 Z"
+         d="M 220.00049,188 V 844.00049 H 156 v -624 h -13.99951 v 624 H 78 v -624 H 64.00049 v 624 H 0 V 156 h 188.00049 a 32,32 0 0 1 32,32 z"
          style="display:none;fill:#000000;fill-opacity:1;stroke-width:2;stroke-miterlimit:12.2;stroke-opacity:0.5;paint-order:stroke fill markers"
          id="path961"
          inkscape:label="M" /><path

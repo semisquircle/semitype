@@ -1,3 +1,4 @@
+import json
 import fontforge
 import xml.etree.ElementTree as ET
 import tempfile
@@ -5,14 +6,6 @@ import os
 import shutil
 import re
 import psMat
-
-FONT_PREFS = [
-    {"name": "b", "num_squares": 13, "square_size": 64, "space_size": 14},
-    {"name": "c", "num_squares": 11, "square_size": 80, "space_size": 12},
-    {"name": "d", "num_squares": 11, "square_size": 70, "space_size": 23},
-    {"name": "e", "num_squares": 9, "square_size": 104, "space_size": 8},
-    {"name": "f", "num_squares": 9, "square_size": 96, "space_size": 17}
-]
 
 OUTPUT_PATH = "download"
 
@@ -42,14 +35,41 @@ def round_path(d, decimals=2):
     return number_re.sub(repl, d)
 
 
-def generate_font(font_pref, family):
+def italicize(font, family):
+    # Select all glyphs in the font
+    font.selection.all()
+
+    # Apply the Italic transformation
+    # angle = slant in degrees (defaults to -13 if left empty)
+    font.italicize(-10) 
+    font.macstyle |= 2
+    font.appendSFNTName("English (US)", "SubFamily", "Italic")
+
+    # Update the font metadata so OS identifies it as an Italic variant
+    font.fontname = font.fontname + "-Italic"
+    font.fullname = font.fullname + " Italic"
+
+    # Set TTF/OTF specific style maps
+    font.os2_stylemap = 1 # Bit 0 signifies Italic in OS/2 table
+
+    # Generate
+    font.generate(f"{OUTPUT_PATH}/{family}/ttf/{font.fontname}.ttf")
+    font.generate(f"{OUTPUT_PATH}/{family}/otf/{font.fontname}.otf")
+    font.generate(f"{OUTPUT_PATH}/{family}/woff2/{font.fontname}.woff2")
+
+
+def generate_font(font_pref, descenders, family):
     svg_file = f'svg/{font_pref["name"]}.svg'
 
     # Create font
+    family_name = "Tombaugh Display" if family == "display" else "Tombaugh"
+    full_name = f'{family_name} {font_pref["name"]}'
+
     font = fontforge.font()
-    font.familyname = "Tombaugh Display" if family == "display" else "Tombaugh"
+    font.familyname = family_name
     font.fontname = f'{font.familyname.replace(" ", "")}-{font_pref["name"]}'
-    font.fullname = f'{font.familyname} {font_pref["name"]}'
+    font.fullname = full_name
+    font.os2_weight = font_pref["weight"]
     font.weight = font_pref["name"]
     font.version = "1.0"
 
@@ -57,12 +77,12 @@ def generate_font(font_pref, family):
     descent = 2 * (font_pref["square_size"] + font_pref["space_size"])
 
     if family == "regular":
-        font.em = 1000
-        font.ascent = 1000 - cap_top
+        font.em = font_pref["em"]
+        font.ascent = font_pref["em"] - cap_top
         font.descent = descent
     else:
-        font.em = 1000 - cap_top - descent
-        font.ascent = 1000 - cap_top - descent
+        font.em = font_pref["em"] - cap_top - descent
+        font.ascent = font_pref["em"] - cap_top - descent
         font.descent = 0
 
     # Load SVG
@@ -82,6 +102,16 @@ def generate_font(font_pref, family):
     # Import glyphs
     for i, path in enumerate(paths):
         label = path.get(f"{{{INKSCAPE_NS}}}label")
+
+        # Descender check for display
+        potential_descender_label = label.split()
+        glyph_family = potential_descender_label[-1]
+        if glyph_family in ["regular", "display"]:
+            if glyph_family != family:
+                continue
+            else:
+                label = potential_descender_label[0]
+
         match label:
             case "Period":
                 char = "."
@@ -137,6 +167,21 @@ def generate_font(font_pref, family):
         for right in glyph_names:
             font[left].addPosSub("kern_subtable", right, font_pref["space_size"])
 
+    # Special handling for descenders
+    if family == "regular":
+        for descender in descenders:
+            char = descender["char"]
+            kerning_string = descender.get("kerning", None)
+
+            if kerning_string is not None:
+                kerning = -(kerning_string.count("1") * font_pref["square_size"]) - (kerning_string.count("0") * font_pref["space_size"])
+                exceptions = descender.get("exceptions", None)
+
+                if exceptions is not None:
+                    for left in glyph_names:
+                        if left not in exceptions:
+                            font[left].addPosSub("kern_subtable", char, kerning)
+
     # Space character
     space = font.createChar(ord(" "))
     space.glyphname = "space"
@@ -147,10 +192,17 @@ def generate_font(font_pref, family):
     font.generate(f"{OUTPUT_PATH}/{family}/otf/{font.fontname}.otf")
     font.generate(f"{OUTPUT_PATH}/{family}/woff2/{font.fontname}.woff2")
 
-    print(f"✅ Generated TTF, OTF, and WOFF2 for {font.fullname}!")
+    italicize(font, family)
+
+    font.close()
+
+    print(f"✅ Generated TTF, OTF, and WOFF2 for {full_name}!")
 
 
 if __name__ == "__main__":
+    with open("tombaugh.json", "r") as f:
+        font_prefs = json.load(f)
+
     if os.path.exists(OUTPUT_PATH):
         shutil.rmtree(OUTPUT_PATH)
         
@@ -159,6 +211,6 @@ if __name__ == "__main__":
         os.makedirs(f'{OUTPUT_PATH}/{family}/otf')
         os.makedirs(f'{OUTPUT_PATH}/{family}/woff2')
 
-    for font_pref in FONT_PREFS:
-        generate_font(font_pref, "regular")
-        generate_font(font_pref, "display")
+    for font_pref in font_prefs["fonts"]:
+        generate_font(font_pref, font_prefs["descenders"], "regular")
+        generate_font(font_pref, font_prefs["descenders"], "display")

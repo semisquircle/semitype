@@ -1,0 +1,184 @@
+/* Tombaugh Regular */
+@font-face {
+	font-family: "Tombaugh";
+	font-weight: 300;
+	font-style: normal;
+	src: url("../Tombaugh/download/regular/woff2/Tombaugh-Hero.woff2") format("woff2");
+}
+@font-face {
+	font-family: "Tombaugh";
+	font-weight: 300;
+	font-style: italic;
+	src: url("../Tombaugh/download/regular/woff2/Tombaugh-Hero-Italic.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "Tombaugh";
+	font-weight: 400;
+	font-style: normal;
+	src: url("../Tombaugh/download/regular/woff2/Tombaugh-b.woff2") format("woff2");
+}
+@font-face {
+	font-family: "Tombaugh";
+	font-weight: 400;
+	font-style: italic;
+	src: url("../Tombaugh/download/regular/woff2/Tombaugh-b-Italic.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "Tombaugh";
+	font-weight: 500;
+	font-style: normal;
+	src: url("../Tombaugh/download/regular/woff2/Tombaugh-c.woff2") format("woff2");
+}
+@font-face {
+	font-family: "Tombaugh";
+	font-weight: 500;
+	font-style: italic;
+	src: url("../Tombaugh/download/regular/woff2/Tombaugh-c-Italic.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "Tombaugh";
+	font-weight: 600;
+	font-style: normal;
+	src: url("../Tombaugh/download/regular/woff2/Tombaugh-d.woff2") format("woff2");
+}
+@font-face {
+	font-family: "Tombaugh";
+	font-weight: 600;
+	font-style: italic;
+	src: url("../Tombaugh/download/regular/woff2/Tombaugh-d-Italic.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "Tombaugh";
+	font-weight: 700;
+	font-style: normal;
+	src: url("../Tombaugh/download/regular/woff2/Tombaugh-e.woff2") format("woff2");
+}
+@font-face {
+	font-family: "Tombaugh";
+	font-weight: 700;
+	font-style: italic;
+	src: url("../Tombaugh/download/regular/woff2/Tombaugh-e-Italic.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "Tombaugh";
+	font-weight: 800;
+	font-style: normal;
+	src: url("../Tombaugh/download/regular/woff2/Tombaugh-f.woff2") format("woff2");
+}
+@font-face {
+	font-family: "Tombaugh";
+	font-weight: 800;
+	font-style: italic;
+	src: url("../Tombaugh/download/regular/woff2/Tombaugh-f-Italic.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "Tombaugh";
+	font-weight: 900;
+	font-style: normal;
+	src: url("../Tombaugh/download/regular/woff2/Tombaugh-g.woff2") format("woff2");
+}
+@font-face {
+	font-family: "Tombaugh";
+	font-weight: 900;
+	font-style: italic;
+	src: url("../Tombaugh/download/regular/woff2/Tombaugh-g-Italic.woff2") format("woff2");
+}
+
+
+/* Tombaugh Display */
+@font-face {
+	font-family: "Tombaugh Display";
+	font-weight: 300;
+	font-style: normal;
+	src: url("../Tombaugh/download/display/woff2/TombaughDisplay-Hero.woff2") format("woff2");
+}
+@font-face {
+	font-family: "Tombaugh Display";
+	font-weight: 300;
+	font-style: italic;
+	src: url("../Tombaugh/download/display/woff2/TombaughDisplay-Hero-Italic.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "Tombaugh Display";
+	font-weight: 400;
+	font-style: normal;
+	src: url("../Tombaugh/download/display/woff2/TombaughDisplay-b.woff2") format("woff2");
+}
+@font-face {
+	font-family: "Tombaugh Display";
+	font-weight: 400;
+	font-style: italic;
+	src: url("../Tombaugh/download/display/woff2/TombaughDisplay-b-Italic.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "Tombaugh Display";
+	font-weight: 500;
+	font-style: normal;
+	src: url("../Tombaugh/download/display/woff2/TombaughDisplay-c.woff2") format("woff2");
+}
+@font-face {
+	font-family: "Tombaugh Display";
+	font-weight: 500;
+	font-style: italic;
+	src: url("../Tombaugh/download/display/woff2/TombaughDisplay-c-Italic.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "Tombaugh Display";
+	font-weight: 600;
+	font-style: normal;
+	src: url("../Tombaugh/download/display/woff2/TombaughDisplay-d.woff2") format("woff2");
+}
+@font-face {
+	font-family: "Tombaugh Display";
+	font-weight: 600;
+	font-style: italic;
+	src: url("../Tombaugh/download/display/woff2/TombaughDisplay-d-Italic.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "Tombaugh Display";
+	font-weight: 700;
+	font-style: normal;
+	src: url("../Tombaugh/download/display/woff2/TombaughDisplay-e.woff2") format("woff2");
+}
+@font-face {
+	font-family: "Tombaugh Display";
+	font-weight: 700;
+	font-style: italic;
+	src: url("../Tombaugh/download/display/woff2/TombaughDisplay-e-Italic.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "Tombaugh Display";
+	font-weight: 800;
+	font-style: normal;
+	src: url("../Tombaugh/download/display/woff2/TombaughDisplay-f.woff2") format("woff2");
+}
+@font-face {
+	font-family: "Tombaugh Display";
+	font-weight: 800;
+	font-style: italic;
+	src: url("../Tombaugh/download/display/woff2/TombaughDisplay-f-Italic.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "Tombaugh Display";
+	font-weight: 900;
+	font-style: normal;
+	src: url("../Tombaugh/download/display/woff2/TombaughDisplay-g.woff2") format("woff2");
+}
+@font-face {
+	font-family: "Tombaugh Display";
+	font-weight: 900;
+	font-style: italic;
+	src: url("../Tombaugh/download/display/woff2/TombaughDisplay-g-Italic.woff2") format("woff2");
+}
