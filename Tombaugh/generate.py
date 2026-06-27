@@ -6,6 +6,7 @@ import os
 import shutil
 import re
 import psMat
+import math
 
 OUTPUT_PATH = "download"
 
@@ -35,24 +36,21 @@ def round_path(d, decimals=2):
     return number_re.sub(repl, d)
 
 
-def italicize(font, family):
-    # Select all glyphs in the font
-    font.selection.all()
+def obliquify(font, family):
+    angle_deg = 10
 
-    # Apply the Italic transformation
-    # angle = slant in degrees (defaults to -13 if left empty)
-    font.italicize(-10) 
+    for glyph in font.glyphs():
+        if glyph.unicode != -1:
+            glyph.transform(psMat.skew(angle_deg * math.pi / 180))
+
+    font.italicangle = angle_deg
     font.macstyle |= 2
+    font.os2_stylemap = 1
+
+    font.fontname += "-Oblique"
+    font.fullname += " Oblique"
     font.appendSFNTName("English (US)", "SubFamily", "Italic")
 
-    # Update the font metadata so OS identifies it as an Italic variant
-    font.fontname = font.fontname + "-Italic"
-    font.fullname = font.fullname + " Italic"
-
-    # Set TTF/OTF specific style maps
-    font.os2_stylemap = 1 # Bit 0 signifies Italic in OS/2 table
-
-    # Generate
     font.generate(f"{OUTPUT_PATH}/{family}/ttf/{font.fontname}.ttf")
     font.generate(f"{OUTPUT_PATH}/{family}/otf/{font.fontname}.otf")
     font.generate(f"{OUTPUT_PATH}/{family}/woff2/{font.fontname}.woff2")
@@ -192,7 +190,7 @@ def generate_font(font_pref, descenders, family):
     font.generate(f"{OUTPUT_PATH}/{family}/otf/{font.fontname}.otf")
     font.generate(f"{OUTPUT_PATH}/{family}/woff2/{font.fontname}.woff2")
 
-    italicize(font, family)
+    obliquify(font, family)
 
     font.close()
 
