@@ -1,4 +1,4 @@
-def derive(num_squares, em=1002):
+def derive(num_squares, em=1000):
     print(f'{num_squares} squares, {num_squares - 1} spaces')
 
     k = 0
@@ -35,3 +35,4 @@ if __name__ == "__main__":
     derive(13)
     derive(11)
     derive(9)
+    derive(7)

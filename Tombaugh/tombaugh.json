@@ -36,17 +36,24 @@
 		"7": "101",
 		"8": "101",
 		"9": "101",
-		"Period": "1",
-		"Exclamation Point": "1",
-		"Question Mark": "101",
-		"Colon": "1"
+		".": "1",
+		"!": "1",
+		"?": "101",
+		":": "1"
 	},
+	"ascenders": [
+		{
+			"char": "T",
+			"anti_kerning": "2",
+			"lowers": ["a", "c", "e", "g", "m", "n", "o", "p", "q", "r", "s", "u", "v", "w", "x", "y", "z", ":"]
+		}
+	],
     "descenders": [
 		{ "char": "g" },
 		{
 			"char": "j",
-			"kerning": "1",
-			"exceptions": ["g", "j", "y"]
+			"anti_kerning": "1",
+			"exceptions": ["g", "j", "q", "y"]
 		},
 		{ "char": "p" },
 		{ "char": "q" },
@@ -56,7 +63,9 @@
 		{
 			"name": "Hero",
 			"weight": 300,
-			"num_squares": 13,
+			"diacritic_squares": 2,
+			"cap_squares": 11,
+			"descent_squares": 2,
 			"square_size": 67,
 			"space_size": 12,
 			"em": 1015
@@ -64,7 +73,9 @@
 		{
 			"name": "b",
 			"weight": 400,
-			"num_squares": 13,
+			"diacritic_squares": 2,
+			"cap_squares": 11,
+			"descent_squares": 2,
 			"square_size": 64,
 			"space_size": 14,
 			"em": 1000
@@ -72,7 +83,9 @@
 		{
 			"name": "c",
 			"weight": 500,
-			"num_squares": 11,
+			"diacritic_squares": 2,
+			"cap_squares": 9,
+			"descent_squares": 2,
 			"square_size": 70,
 			"space_size": 23,
 			"em": 1000
@@ -80,7 +93,9 @@
 		{
 			"name": "d",
 			"weight": 600,
-			"num_squares": 11,
+			"diacritic_squares": 2,
+			"cap_squares": 9,
+			"descent_squares": 2,
 			"square_size": 80,
 			"space_size": 12,
 			"em": 1000
@@ -88,25 +103,31 @@
 		{
 			"name": "e",
 			"weight": 700,
-			"num_squares": 9,
-			"square_size": 88,
-			"space_size": 26,
+			"diacritic_squares": 1,
+			"cap_squares": 5,
+			"descent_squares": 1,
+			"square_size": 112,
+			"space_size": 36,
 			"em": 1000
 		},
 		{
 			"name": "f",
 			"weight": 800,
-			"num_squares": 9,
-			"square_size": 96,
-			"space_size": 17,
+			"diacritic_squares": 1,
+			"cap_squares": 5,
+			"descent_squares": 1,
+			"square_size": 118,
+			"space_size": 29,
 			"em": 1000
 		},
 		{
 			"name": "g",
 			"weight": 900,
-			"num_squares": 9,
-			"square_size": 104,
-			"space_size": 8,
+			"diacritic_squares": 1,
+			"cap_squares": 5,
+			"descent_squares": 1,
+			"square_size": 124,
+			"space_size": 22,
 			"em": 1000
 		}
 	]

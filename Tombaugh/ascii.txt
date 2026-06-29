@@ -1,0 +1,128 @@
+|  00 | U+0000  |    NUL    | Null                        |
+|  01 | U+0001  |    SOH    | Start of Heading            |
+|  02 | U+0002  |    STX    | Start of Text               |
+|  03 | U+0003  |    ETX    | End of Text                 |
+|  04 | U+0004  |    EOT    | End of Transmission         |
+|  05 | U+0005  |    ENQ    | Enquiry                     |
+|  06 | U+0006  |    ACK    | Acknowledge                 |
+|  07 | U+0007  |    BEL    | Bell                        |
+|  08 | U+0008  |     BS    | Backspace                   |
+|  09 | U+0009  |     HT    | Horizontal Tab              |
+|  0A | U+000A  |     LF    | Line Feed                   |
+|  0B | U+000B  |     VT    | Vertical Tab                |
+|  0C | U+000C  |     FF    | Form Feed                   |
+|  0D | U+000D  |     CR    | Carriage Return             |
+|  0E | U+000E  |     SO    | Shift Out                   |
+|  0F | U+000F  |     SI    | Shift In                    |
+|  10 | U+0010  |    DLE    | Data Link Escape            |
+|  11 | U+0011  |    DC1    | Device Control 1 (XON)      |
+|  12 | U+0012  |    DC2    | Device Control 2            |
+|  13 | U+0013  |    DC3    | Device Control 3 (XOFF)     |
+|  14 | U+0014  |    DC4    | Device Control 4            |
+|  15 | U+0015  |    NAK    | Negative Acknowledge        |
+|  16 | U+0016  |    SYN    | Synchronous Idle            |
+|  17 | U+0017  |    ETB    | End of Transmission Block   |
+|  18 | U+0018  |    CAN    | Cancel                      |
+|  19 | U+0019  |     EM    | End of Medium               |
+|  1A | U+001A  |    SUB    | Substitute                  |
+|  1B | U+001B  |    ESC    | Escape                      |
+|  1C | U+001C  |     FS    | File Separator              |
+|  1D | U+001D  |     GS    | Group Separator             |
+|  1E | U+001E  |     RS    | Record Separator            |
+|  1F | U+001F  |     US    | Unit Separator              |
+|  20 | U+0020  |     ␠     | Space                       |
+|  21 | U+0021  |     !     | Exclamation Mark            |
+|  22 | U+0022  |     "     | Quotation Mark              |
+|  23 | U+0023  |     #     | Number Sign (Hash)          |
+|  24 | U+0024  |     $     | Dollar Sign                 |
+|  25 | U+0025  |     %     | Percent Sign                |
+|  26 | U+0026  |     &     | Ampersand                   |
+|  27 | U+0027  |     '     | Apostrophe                  |
+|  28 | U+0028  |     (     | Left Parenthesis            |
+|  29 | U+0029  |     )     | Right Parenthesis           |
+|  2A | U+002A  |     *     | Asterisk                    |
+|  2B | U+002B  |     +     | Plus Sign                   |
+|  2C | U+002C  |     ,     | Comma                       |
+|  2D | U+002D  |     -     | Hyphen-Minus                |
+|  2E | U+002E  |     .     | Full Stop (Period)          |
+|  2F | U+002F  |     /     | Solidus (Slash)             |
+|  30 | U+0030  |     0     | Digit Zero                  |
+|  31 | U+0031  |     1     | Digit One                   |
+|  32 | U+0032  |     2     | Digit Two                   |
+|  33 | U+0033  |     3     | Digit Three                 |
+|  34 | U+0034  |     4     | Digit Four                  |
+|  35 | U+0035  |     5     | Digit Five                  |
+|  36 | U+0036  |     6     | Digit Six                   |
+|  37 | U+0037  |     7     | Digit Seven                 |
+|  38 | U+0038  |     8     | Digit Eight                 |
+|  39 | U+0039  |     9     | Digit Nine                  |
+|  3A | U+003A  |     :     | Colon                       |
+|  3B | U+003B  |     ;     | Semicolon                   |
+|  3C | U+003C  |     <     | Less-Than Sign              |
+|  3D | U+003D  |     =     | Equals Sign                 |
+|  3E | U+003E  |     >     | Greater-Than Sign           |
+|  3F | U+003F  |     ?     | Question Mark               |
+|  40 | U+0040  |     @     | Commercial At               |
+|  41 | U+0041  |     A     | Latin Capital Letter A      |
+|  42 | U+0042  |     B     | Latin Capital Letter B      |
+|  43 | U+0043  |     C     | Latin Capital Letter C      |
+|  44 | U+0044  |     D     | Latin Capital Letter D      |
+|  45 | U+0045  |     E     | Latin Capital Letter E      |
+|  46 | U+0046  |     F     | Latin Capital Letter F      |
+|  47 | U+0047  |     G     | Latin Capital Letter G      |
+|  48 | U+0048  |     H     | Latin Capital Letter H      |
+|  49 | U+0049  |     I     | Latin Capital Letter I      |
+|  4A | U+004A  |     J     | Latin Capital Letter J      |
+|  4B | U+004B  |     K     | Latin Capital Letter K      |
+|  4C | U+004C  |     L     | Latin Capital Letter L      |
+|  4D | U+004D  |     M     | Latin Capital Letter M      |
+|  4E | U+004E  |     N     | Latin Capital Letter N      |
+|  4F | U+004F  |     O     | Latin Capital Letter O      |
+|  50 | U+0050  |     P     | Latin Capital Letter P      |
+|  51 | U+0051  |     Q     | Latin Capital Letter Q      |
+|  52 | U+0052  |     R     | Latin Capital Letter R      |
+|  53 | U+0053  |     S     | Latin Capital Letter S      |
+|  54 | U+0054  |     T     | Latin Capital Letter T      |
+|  55 | U+0055  |     U     | Latin Capital Letter U      |
+|  56 | U+0056  |     V     | Latin Capital Letter V      |
+|  57 | U+0057  |     W     | Latin Capital Letter W      |
+|  58 | U+0058  |     X     | Latin Capital Letter X      |
+|  59 | U+0059  |     Y     | Latin Capital Letter Y      |
+|  5A | U+005A  |     Z     | Latin Capital Letter Z      |
+|  5B | U+005B  |     [     | Left Square Bracket         |
+|  5C | U+005C  |     \     | Reverse Solidus (Backslash) |
+|  5D | U+005D  |     ]     | Right Square Bracket        |
+|  5E | U+005E  |     ^     | Circumflex Accent (Caret)   |
+|  5F | U+005F  |     _     | Low Line (Underscore)       |
+|  60 | U+0060  |     `     | Grave Accent (Backtick)     |
+|  61 | U+0061  |     a     | Latin Small Letter A        |
+|  62 | U+0062  |     b     | Latin Small Letter B        |
+|  63 | U+0063  |     c     | Latin Small Letter C        |
+|  64 | U+0064  |     d     | Latin Small Letter D        |
+|  65 | U+0065  |     e     | Latin Small Letter E        |
+|  66 | U+0066  |     f     | Latin Small Letter F        |
+|  67 | U+0067  |     g     | Latin Small Letter G        |
+|  68 | U+0068  |     h     | Latin Small Letter H        |
+|  69 | U+0069  |     i     | Latin Small Letter I        |
+|  6A | U+006A  |     j     | Latin Small Letter J        |
+|  6B | U+006B  |     k     | Latin Small Letter K        |
+|  6C | U+006C  |     l     | Latin Small Letter L        |
+|  6D | U+006D  |     m     | Latin Small Letter M        |
+|  6E | U+006E  |     n     | Latin Small Letter N        |
+|  6F | U+006F  |     o     | Latin Small Letter O        |
+|  70 | U+0070  |     p     | Latin Small Letter P        |
+|  71 | U+0071  |     q     | Latin Small Letter Q        |
+|  72 | U+0072  |     r     | Latin Small Letter R        |
+|  73 | U+0073  |     s     | Latin Small Letter S        |
+|  74 | U+0074  |     t     | Latin Small Letter T        |
+|  75 | U+0075  |     u     | Latin Small Letter U        |
+|  76 | U+0076  |     v     | Latin Small Letter V        |
+|  77 | U+0077  |     w     | Latin Small Letter W        |
+|  78 | U+0078  |     x     | Latin Small Letter X        |
+|  79 | U+0079  |     y     | Latin Small Letter Y        |
+|  7A | U+007A  |     z     | Latin Small Letter Z        |
+|  7B | U+007B  |     {     | Left Curly Bracket          |
+|  7C | U+007C  |     |     | Vertical Line (Pipe)        |
+|  7D | U+007D  |     }     | Right Curly Bracket         |
+|  7E | U+007E  |     ~     | Tilde                       |
+|  7F | U+007F  |    DEL    | Delete                      |

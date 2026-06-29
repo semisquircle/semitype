@@ -37,7 +37,7 @@ def round_path(d, decimals=2):
 
 
 def obliquify(font, family):
-    angle_deg = 10
+    angle_deg = 15
 
     for glyph in font.glyphs():
         if glyph.unicode != -1:
@@ -56,7 +56,7 @@ def obliquify(font, family):
     font.generate(f"{OUTPUT_PATH}/{family}/woff2/{font.fontname}.woff2")
 
 
-def generate_font(font_pref, descenders, family):
+def generate_font(font_pref, ascenders, descenders, family):
     svg_file = f'svg/{font_pref["name"]}.svg'
 
     # Create font
@@ -71,8 +71,8 @@ def generate_font(font_pref, descenders, family):
     font.weight = font_pref["name"]
     font.version = "1.0"
 
-    cap_top = 2 * (font_pref["square_size"] + font_pref["space_size"])
-    descent = 2 * (font_pref["square_size"] + font_pref["space_size"])
+    cap_top = font_pref["diacritic_squares"] * (font_pref["square_size"] + font_pref["space_size"])
+    descent = font_pref["descent_squares"] * (font_pref["square_size"] + font_pref["space_size"])
 
     if family == "regular":
         font.em = font_pref["em"]
@@ -157,33 +157,57 @@ def generate_font(font_pref, descenders, family):
             except OSError:
                 pass
 
-    # Kerning/spacing
-    font.addLookup("kern_lookup", "gpos_pair", None, [["kern", [["latn", ["dflt"]]]]])
-    font.addLookupSubtable("kern_lookup", "kern_subtable")
-    glyph_names = [g.glyphname for g in font.glyphs() if g.unicode != -1]
-    for left in glyph_names:
-        for right in glyph_names:
-            font[left].addPosSub("kern_subtable", right, font_pref["space_size"])
+    # Kerning
+    lookup_name = "kern_lookup"
+    subtable_name = "kern_subtable"
+    desired_kern = font_pref["space_size"]
+    glyph_list = [g.glyphname for g in font.glyphs() if not g.glyphname.startswith(" ")]
+    font.addLookup(lookup_name, "gpos_pair", None, [("kern", [("latn", ["dflt"])])])
+    font.addLookupSubtable(lookup_name, subtable_name)
+    font.autoKern(subtable_name, desired_kern, glyph_list, glyph_list, minKern=desired_kern, onlyCloser=False, touch=True)
+
+    # Manual kerning
+    # font.addLookup(lookup_name, "gpos_pair", None, [["kern", [["latn", ["dflt"]]]]])
+    # font.addLookupSubtable(lookup_name, subtable_name)
+    # glyph_names = [g.glyphname for g in font.glyphs() if g.unicode != -1]
+    # for left in glyph_names:
+    #     for right in glyph_names:
+    #         font[left].addPosSub(subtable_name, right, font_pref["space_size"])
+
+    # Special handling for ascenders
+    # for ascender in ascenders:
+    #     kerning_string = ascender["anti_kerning"]
+    #     kerning = -(
+    #         (kerning_string.count("1") * font_pref["square_size"])
+    #         + (kerning_string.count("0") * font_pref["space_size"])
+    #         + (kerning_string.count("2") * (((2 * font_pref["square_size"]) + font_pref["space_size"]) / 2))
+    #     )
+    #     for left in ascender["lowers"]:
+    #         font[left].addPosSub(subtable_name, ascender["char"], kerning)
 
     # Special handling for descenders
-    if family == "regular":
-        for descender in descenders:
-            char = descender["char"]
-            kerning_string = descender.get("kerning", None)
+    # if family == "regular":
+    #     for descender in descenders:
+    #         char = descender["char"]
+    #         kerning_string = descender.get("anti_kerning", None)
 
-            if kerning_string is not None:
-                kerning = -(kerning_string.count("1") * font_pref["square_size"]) - (kerning_string.count("0") * font_pref["space_size"])
-                exceptions = descender.get("exceptions", None)
+    #         if kerning_string is not None:
+    #             kerning = -(
+    #                 (kerning_string.count("1") * font_pref["square_size"])
+    #                 + (kerning_string.count("0") * font_pref["space_size"])
+    #                 + (kerning_string.count("2") * (((2 * font_pref["square_size"]) + font_pref["space_size"]) / 2))
+    #             )
+    #             exceptions = descender.get("exceptions", None)
 
-                if exceptions is not None:
-                    for left in glyph_names:
-                        if left not in exceptions:
-                            font[left].addPosSub("kern_subtable", char, kerning)
+    #             if exceptions is not None:
+    #                 for left in glyph_names:
+    #                     if left not in exceptions:
+    #                         font[left].addPosSub(subtable_name, char, kerning)
 
     # Space character
     space = font.createChar(ord(" "))
     space.glyphname = "space"
-    space.width = font_pref["square_size"]
+    space.width = font_pref["square_size"] + font_pref["space_size"]
 
     # Generate
     font.generate(f"{OUTPUT_PATH}/{family}/ttf/{font.fontname}.ttf")
@@ -210,5 +234,5 @@ if __name__ == "__main__":
         os.makedirs(f'{OUTPUT_PATH}/{family}/woff2')
 
     for font_pref in font_prefs["fonts"]:
-        generate_font(font_pref, font_prefs["descenders"], "regular")
-        generate_font(font_pref, font_prefs["descenders"], "display")
+        generate_font(font_pref, font_prefs["ascenders"], font_prefs["descenders"], "regular")
+        generate_font(font_pref, font_prefs["ascenders"], font_prefs["descenders"], "display")

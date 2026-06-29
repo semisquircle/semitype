@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Compare</title>
+
+	<link rel="stylesheet" href="css/fonts.css">
+    <style>
+        html, body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            background: black;
+            margin: 0;
+        }
+
+        div {
+            font-size: 150px;
+            line-height: 1.1;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        AMNPW<br>
+        01234567890:!
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        var currentFont = 0;
+        const font1 = {
+            fontFamily: "Tombaugh Display",
+            fontWeight: "900",
+        }
+        const font2 = {
+            fontFamily: "Hades",
+            fontWeight: "700",
+        }
+
+        function changeFont(font) {
+            $("div").css({
+                "font-family": font.fontFamily,
+                "font-weight": font.fontWeight
+            });
+        }
+        changeFont(font1);
+
+        $(document).on("keypress", (e) => {
+            if (e.code == "Space") {
+                currentFont = (currentFont + 1) % 2;
+                console.log(currentFont);
+                changeFont((currentFont == 0) ? font1 : font2);
+            }
+        });
+    </script>
+</body>
+
+</html>

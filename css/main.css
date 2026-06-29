@@ -8,18 +8,29 @@ body {
 	background: black;
 }
 
+div {
+	display: flex;
+	flex-direction: column;
+}
+
 #tombaugh-container {
+	flex-direction: row;
 	width: 100%;
 	padding: 50px;
 	box-sizing: border-box;
 }
 
+.tombaugh-column { height: 100%; }
+#tombaugh-regular { width: 40%; }
+#tombaugh-display { width: 60%; }
+
 .tombaugh {
-	font-family: "Tombaugh Display";
 	font-size: 110px;
 	line-height: 1;
 	color: white;
 }
+#tombaugh-regular .tombaugh { font-family: "Tombaugh"; }
+#tombaugh-display .tombaugh { font-family: "Tombaugh Display"; }
 .italic { font-style: italic; }
 .tombaugh + .tombaugh { margin-top: 10px; }
 .tombaugh-hero {
