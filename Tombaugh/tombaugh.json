@@ -1,134 +1,264 @@
 {
-	"glyph_widths": {
-		"A": "101",
-		"B": "101",
-		"C": "101",
-		"D": "101",
-		"E": "101",
-		"F": "101",
-		"G": "101",
-		"H": "101",
-		"I": "1",
-		"J": "101",
-		"K": "101",
-		"L": "101",
-		"M": "10101",
-		"N": "10101",
-		"O": "101",
-		"P": "101",
-		"Q": "101",
-		"R": "101",
-		"S": "101",
-		"T": "101",
-		"U": "101",
-		"V": "101",
-		"W": "10101",
-		"X": "101",
-		"Y": "101",
-		"Z": "101",
-		"0": "101",
-		"1": "1",
-		"2": "101",
-		"3": "101",
-		"4": "101",
-		"5": "101",
-		"6": "101",
-		"7": "101",
-		"8": "101",
-		"9": "101",
-		".": "1",
-		"!": "1",
-		"?": "101",
-		":": "1"
-	},
-	"ascenders": [
-		{
-			"char": "T",
-			"anti_kerning": "2",
-			"lowers": ["a", "c", "e", "g", "m", "n", "o", "p", "q", "r", "s", "u", "v", "w", "x", "y", "z", ":"]
-		}
-	],
-    "descenders": [
-		{ "char": "g" },
-		{
-			"char": "j",
-			"anti_kerning": "1",
-			"exceptions": ["g", "j", "q", "y"]
-		},
-		{ "char": "p" },
-		{ "char": "q" },
-		{ "char": "y" }
+    "version": "1.000",
+    "em": 2048,
+    "cap_height": 1150,
+    "cap_top": 449,
+    "ascent": 1599,
+    "descent": 449,
+    "weights": [
+        {
+            "name": "b",
+            "weight": 100,
+            "num_squares_cap": 9,
+            "num_squares_x": 7,
+            "num_squares_diacritics": 2,
+            "num_squares_descent": 2,
+            "square_size": 102,
+            "space_size": 29,
+            "corner_size": 51,
+            "cusp_offset": 43.025454545454544,
+            "body_height": 1674,
+            "x_height": 888,
+            "square_space_ratio": 3.5172413793103448
+        },
+        {
+            "name": "c",
+            "weight": 300,
+            "num_squares_cap": 9,
+            "num_squares_x": 7,
+            "num_squares_diacritics": 2,
+            "num_squares_descent": 2,
+            "square_size": 110,
+            "space_size": 20,
+            "corner_size": 55,
+            "cusp_offset": 46.4,
+            "body_height": 1670,
+            "x_height": 890,
+            "square_space_ratio": 5.5
+        },
+        {
+            "name": "d",
+            "weight": 400,
+            "num_squares_cap": 7,
+            "num_squares_x": 5,
+            "num_squares_diacritics": 2,
+            "num_squares_descent": 2,
+            "square_size": 130,
+            "space_size": 40,
+            "corner_size": 65,
+            "cusp_offset": 54.836363636363636,
+            "body_height": 1830,
+            "x_height": 810,
+            "square_space_ratio": 3.25
+        },
+        {
+            "name": "e",
+            "weight": 500,
+            "num_squares_cap": 7,
+            "num_squares_x": 5,
+            "num_squares_diacritics": 2,
+            "num_squares_descent": 2,
+            "square_size": 142,
+            "space_size": 26,
+            "corner_size": 71,
+            "cusp_offset": 59.89818181818182,
+            "body_height": 1822,
+            "x_height": 814,
+            "square_space_ratio": 5.461538461538462
+        },
+        {
+            "name": "f",
+            "weight": 700,
+            "num_squares_cap": 5,
+            "num_squares_x": 4,
+            "num_squares_diacritics": 1,
+            "num_squares_descent": 1,
+            "square_size": 186,
+            "space_size": 55,
+            "corner_size": 93,
+            "cusp_offset": 78.45818181818181,
+            "body_height": 1632,
+            "x_height": 909,
+            "square_space_ratio": 3.381818181818182
+        },
+        {
+            "name": "g",
+            "weight": 900,
+            "num_squares_cap": 5,
+            "num_squares_x": 4,
+            "num_squares_diacritics": 1,
+            "num_squares_descent": 1,
+            "square_size": 202,
+            "space_size": 35,
+            "corner_size": 101,
+            "cusp_offset": 85.20727272727272,
+            "body_height": 1624,
+            "x_height": 913,
+            "square_space_ratio": 5.771428571428571
+        }
     ],
-	"fonts": [
-		{
-			"name": "Hero",
-			"weight": 300,
-			"diacritic_squares": 2,
-			"cap_squares": 11,
-			"descent_squares": 2,
-			"square_size": 67,
-			"space_size": 12,
-			"em": 1015
-		},
-		{
-			"name": "b",
-			"weight": 400,
-			"diacritic_squares": 2,
-			"cap_squares": 11,
-			"descent_squares": 2,
-			"square_size": 64,
-			"space_size": 14,
-			"em": 1000
-		},
-		{
-			"name": "c",
-			"weight": 500,
-			"diacritic_squares": 2,
-			"cap_squares": 9,
-			"descent_squares": 2,
-			"square_size": 70,
-			"space_size": 23,
-			"em": 1000
-		},
-		{
-			"name": "d",
-			"weight": 600,
-			"diacritic_squares": 2,
-			"cap_squares": 9,
-			"descent_squares": 2,
-			"square_size": 80,
-			"space_size": 12,
-			"em": 1000
-		},
-		{
-			"name": "e",
-			"weight": 700,
-			"diacritic_squares": 1,
-			"cap_squares": 5,
-			"descent_squares": 1,
-			"square_size": 112,
-			"space_size": 36,
-			"em": 1000
-		},
-		{
-			"name": "f",
-			"weight": 800,
-			"diacritic_squares": 1,
-			"cap_squares": 5,
-			"descent_squares": 1,
-			"square_size": 118,
-			"space_size": 29,
-			"em": 1000
-		},
-		{
-			"name": "g",
-			"weight": 900,
-			"diacritic_squares": 1,
-			"cap_squares": 5,
-			"descent_squares": 1,
-			"square_size": 124,
-			"space_size": 22,
-			"em": 1000
-		}
-	]
+    "glyph_widths": {
+        "A": "101",
+        "B": "101",
+        "C": "101",
+        "D": "101",
+        "E": "101",
+        "F": "101",
+        "G": "101",
+        "H": "101",
+        "I": "1",
+        "J": "101",
+        "K": "101",
+        "L": "101",
+        "M": "10101",
+        "N": "10101",
+        "O": "101",
+        "P": "101",
+        "Q": "101",
+        "R": "101",
+        "S": "101",
+        "T": "101",
+        "U": "101",
+        "V": "101",
+        "W": "10101",
+        "X": "101",
+        "Y": "101",
+        "Z": "101",
+        "a": "101",
+        "b": "101",
+        "c": "101",
+        "d": "101",
+        "e": "101",
+        "f": "101",
+        "g": "101",
+        "h": "101",
+        "i": "1",
+        "j": "101",
+        "k": "101",
+        "l": "1",
+        "m": "10101",
+        "n": "10101",
+        "o": "101",
+        "p": "101",
+        "q": "101",
+        "r": "101",
+        "s": "101",
+        "t": "101",
+        "u": "101",
+        "v": "101",
+        "w": "10101",
+        "x": "101",
+        "y": "101",
+        "z": "101",
+        "0": "101",
+        "1": "1",
+        "2": "101",
+        "3": "101",
+        "4": "101",
+        "5": "101",
+        "6": "101",
+        "7": "101",
+        "8": "101",
+        "9": "101",
+        ".": "1",
+        "!": "1",
+        "?": "101",
+        ":": "1"
+    },
+    "ascenders": [
+        {
+            "char": "T",
+            "left": {
+                "anti_kerning": "2",
+                "lowers": [
+                    "L",
+                    "a",
+                    "b",
+                    "c",
+                    "e",
+                    "g",
+                    "h",
+                    "k",
+                    "m",
+                    "n",
+                    "o",
+                    "p",
+                    "q",
+                    "r",
+                    "s",
+                    "t",
+                    "u",
+                    "v",
+                    "w",
+                    "x",
+                    "y",
+                    "z",
+                    ":"
+                ]
+            },
+            "right": {
+                "anti_kerning": "2",
+                "lowers": [
+                    "a",
+                    "c",
+                    "e",
+                    "g",
+                    "m",
+                    "n",
+                    "o",
+                    "p",
+                    "q",
+                    "r",
+                    "s",
+                    "u",
+                    "v",
+                    "w",
+                    "x",
+                    "y",
+                    "z",
+                    ":"
+                ]
+            }
+        },
+        {
+            "char": "Y",
+            "left": {
+                "anti_kerning": "2",
+                "lowers": [
+                    "L",
+                    "."
+                ]
+            },
+            "right": {
+                "anti_kerning": "2",
+                "lowers": [
+                    "."
+                ]
+            }
+        }
+    ],
+    "descenders": [
+        {
+            "char": "g"
+        },
+        {
+            "char": "j",
+            "anti_kerning": "1",
+            "exceptions": [
+                "g",
+                "j",
+                "q",
+                "y"
+            ]
+        },
+        {
+            "char": "p"
+        },
+        {
+            "char": "q"
+        },
+        {
+            "char": "y"
+        }
+    ]
 }

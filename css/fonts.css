@@ -1,78 +1,65 @@
 /* Tombaugh Regular */
 @font-face {
 	font-family: "Tombaugh";
-	font-weight: 300;
-	font-style: normal;
-	src: url("../Tombaugh/download/regular/woff2/Tombaugh-Hero.woff2") format("woff2");
-}
-@font-face {
-	font-family: "Tombaugh";
-	font-weight: 300;
-	font-style: italic;
-	src: url("../Tombaugh/download/regular/woff2/Tombaugh-Hero-Oblique.woff2") format("woff2");
-}
-
-@font-face {
-	font-family: "Tombaugh";
-	font-weight: 400;
+	font-weight: 100;
 	font-style: normal;
 	src: url("../Tombaugh/download/regular/woff2/Tombaugh-b.woff2") format("woff2");
 }
 @font-face {
 	font-family: "Tombaugh";
-	font-weight: 400;
+	font-weight: 100;
 	font-style: italic;
 	src: url("../Tombaugh/download/regular/woff2/Tombaugh-b-Oblique.woff2") format("woff2");
 }
 
 @font-face {
 	font-family: "Tombaugh";
-	font-weight: 500;
+	font-weight: 300;
 	font-style: normal;
 	src: url("../Tombaugh/download/regular/woff2/Tombaugh-c.woff2") format("woff2");
 }
 @font-face {
 	font-family: "Tombaugh";
-	font-weight: 500;
+	font-weight: 300;
 	font-style: italic;
 	src: url("../Tombaugh/download/regular/woff2/Tombaugh-c-Oblique.woff2") format("woff2");
 }
 
 @font-face {
 	font-family: "Tombaugh";
-	font-weight: 600;
+	font-weight: 400;
 	font-style: normal;
 	src: url("../Tombaugh/download/regular/woff2/Tombaugh-d.woff2") format("woff2");
 }
 @font-face {
 	font-family: "Tombaugh";
-	font-weight: 600;
+	font-weight: 400;
 	font-style: italic;
 	src: url("../Tombaugh/download/regular/woff2/Tombaugh-d-Oblique.woff2") format("woff2");
 }
 
 @font-face {
 	font-family: "Tombaugh";
-	font-weight: 700;
+	font-weight: 500;
 	font-style: normal;
 	src: url("../Tombaugh/download/regular/woff2/Tombaugh-e.woff2") format("woff2");
 }
 @font-face {
 	font-family: "Tombaugh";
-	font-weight: 700;
+	font-weight: 500;
 	font-style: italic;
 	src: url("../Tombaugh/download/regular/woff2/Tombaugh-e-Oblique.woff2") format("woff2");
 }
 
 @font-face {
 	font-family: "Tombaugh";
-	font-weight: 800;
+	font-weight: 700;
 	font-style: normal;
 	src: url("../Tombaugh/download/regular/woff2/Tombaugh-f.woff2") format("woff2");
 }
 @font-face {
 	font-family: "Tombaugh";
-	font-weight: 800;
+	font-weight: 700;
 	font-style: italic;
 	src: url("../Tombaugh/download/regular/woff2/Tombaugh-f-Oblique.woff2") format("woff2");
 }
@@ -94,78 +81,65 @@
 /* Tombaugh Display */
 @font-face {
 	font-family: "Tombaugh Display";
-	font-weight: 300;
-	font-style: normal;
-	src: url("../Tombaugh/download/display/woff2/TombaughDisplay-Hero.woff2") format("woff2");
-}
-@font-face {
-	font-family: "Tombaugh Display";
-	font-weight: 300;
-	font-style: italic;
-	src: url("../Tombaugh/download/display/woff2/TombaughDisplay-Hero-Oblique.woff2") format("woff2");
-}
-
-@font-face {
-	font-family: "Tombaugh Display";
-	font-weight: 400;
+	font-weight: 100;
 	font-style: normal;
 	src: url("../Tombaugh/download/display/woff2/TombaughDisplay-b.woff2") format("woff2");
 }
 @font-face {
 	font-family: "Tombaugh Display";
-	font-weight: 400;
+	font-weight: 100;
 	font-style: italic;
 	src: url("../Tombaugh/download/display/woff2/TombaughDisplay-b-Oblique.woff2") format("woff2");
 }
 
 @font-face {
 	font-family: "Tombaugh Display";
-	font-weight: 500;
+	font-weight: 300;
 	font-style: normal;
 	src: url("../Tombaugh/download/display/woff2/TombaughDisplay-c.woff2") format("woff2");
 }
 @font-face {
 	font-family: "Tombaugh Display";
-	font-weight: 500;
+	font-weight: 300;
 	font-style: italic;
 	src: url("../Tombaugh/download/display/woff2/TombaughDisplay-c-Oblique.woff2") format("woff2");
 }
 
 @font-face {
 	font-family: "Tombaugh Display";
-	font-weight: 600;
+	font-weight: 400;
 	font-style: normal;
 	src: url("../Tombaugh/download/display/woff2/TombaughDisplay-d.woff2") format("woff2");
 }
 @font-face {
 	font-family: "Tombaugh Display";
-	font-weight: 600;
+	font-weight: 400;
 	font-style: italic;
 	src: url("../Tombaugh/download/display/woff2/TombaughDisplay-d-Oblique.woff2") format("woff2");
 }
 
 @font-face {
 	font-family: "Tombaugh Display";
-	font-weight: 700;
+	font-weight: 500;
 	font-style: normal;
 	src: url("../Tombaugh/download/display/woff2/TombaughDisplay-e.woff2") format("woff2");
 }
 @font-face {
 	font-family: "Tombaugh Display";
-	font-weight: 700;
+	font-weight: 500;
 	font-style: italic;
 	src: url("../Tombaugh/download/display/woff2/TombaughDisplay-e-Oblique.woff2") format("woff2");
 }
 
 @font-face {
 	font-family: "Tombaugh Display";
-	font-weight: 800;
+	font-weight: 700;
 	font-style: normal;
 	src: url("../Tombaugh/download/display/woff2/TombaughDisplay-f.woff2") format("woff2");
 }
 @font-face {
 	font-family: "Tombaugh Display";
-	font-weight: 800;
+	font-weight: 700;
 	font-style: italic;
 	src: url("../Tombaugh/download/display/woff2/TombaughDisplay-f-Oblique.woff2") format("woff2");
 }

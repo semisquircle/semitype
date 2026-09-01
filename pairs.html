@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Kerning Pairs</title>
+
+	<link rel="stylesheet" href="css/fonts.css">
+	<style>
+		html, body {
+			width: 100%;
+			height: 100%;
+			font-family: "Tombaugh";
+			background: black;
+			color: white;
+			margin: 0;
+		}
+
+		body {
+			display: flex;
+			flex-direction: column;
+			overflow: hidden;
+		}
+
+		div { display: flex; }
+
+		input[type="radio"] { display: none; }
+
+		label {
+			flex-grow: 1;
+			text-align: center;
+			padding: 5px 0;
+			cursor: pointer;
+		}
+		input:checked + label {
+			background: white;
+			color: black;
+		}
+
+		#font-option-container {
+			font-family: "Tombaugh Display";
+			width: 100%;
+			font-size: 85px;
+		}
+		#font-option-container label { font-style: italic; }
+
+		#char-option-container {
+			font-family: "Tombaugh Display";
+			width: 100%;
+			font-size: 85px;
+		}
+
+		#font-size-slider {
+			width: 100%;
+			cursor: pointer;
+		}
+
+		#text-container {
+			flex-grow: 1;
+			flex-direction: row;
+			width: 100%;
+			font-size: 85px;
+			font-weight: 300;
+			line-height: 1;
+			padding: 30px;
+			box-sizing: border-box;
+			overflow-y: scroll;
+		}
+
+		.text + .text { margin-left: 10px; }
+
+		.kern-left { color: oklch(0.8 0.05 37); }
+		.kern-right { color: oklch(0.8 0.05 157); }
+	</style>
+</head>
+
+<body>
+	<div id="font-option-container"></div>
+	<div id="char-option-container"></div>
+	<input type="range" id="font-size-slider" min="85" max="250" step="5" value="85">
+	<div id="text-container"></div>
+
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+	<script>
+		const allFonts = [
+			{ name: "Hero", weight: 300 },
+			{ name: "b", weight: 400 },
+			{ name: "c", weight: 500 },
+			{ name: "d", weight: 600 },
+			{ name: "e", weight: 700 },
+			{ name: "f", weight: 800 },
+			{ name: "g", weight: 900 }
+		];
+		for (let font of allFonts) {
+			$("#font-option-container").append(`
+				<input type="radio" name="font-option" id="${font.name}-font-option" ${(font.name == "Hero") ? "checked" : ""}>
+				<label for="${font.name}-font-option">${font.name}</label>
+			`);
+		}
+
+		$(`input[name="font-option"]`).on("change", function () {
+			let fontName = $(this).attr("id").replace("-font-option", "");
+			let font = allFonts.find(f => f.name == fontName);
+			$("#text-container").css("font-weight", font.weight);
+		});
+
+		const allChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.!?:";
+		const getCharNameFromChar = (char) => {
+			switch (char) {
+				case ".":
+					return "period";
+				case "!":
+					return "exclamation-point";
+				case "?":
+					return "question-mark";
+				case ":":
+					return "colon";
+				default:
+					return char;
+			}
+			return charName;
+		}
+		const getCharFromCharName = (charName) => {
+			switch (charName) {
+				case "period":
+					return ".";
+				case "exclamation-point":
+					return "!";
+				case "question-mark":
+					return "?";
+				case "colon":
+					return ":";
+				default:
+					return charName;
+			}
+		}
+		for (let char of allChars) {
+			let charName = getCharNameFromChar(char);
+			$("#char-option-container").append(`
+				<input type="radio" name="char-option" id="${charName}-char-option" ${(charName == "A") ? "checked" : ""}>
+				<label for="${charName}-char-option">${char}</label>
+			`);
+		}
+
+		function generatePairs(c) {
+			$("#text-container").empty();
+			let kernLeft = $(`<div class="text kern-left"></div>`);
+			let kernRight = $(`<div class="text kern-right"></div>`);
+			for (let char of allChars) {
+				kernLeft.append(c + char + " ");
+				kernRight.append(char + c + " ");
+			}
+			$("#text-container").append(kernLeft);
+			$("#text-container").append(kernRight);
+		}
+		generatePairs("A");
+
+		$(`input[name="char-option"]`).on("change", function() {
+			let charName = $(this).attr("id").replace("-char-option", "");
+			let char = getCharFromCharName(charName);
+			generatePairs(char);
+		});
+
+		$("#font-size-slider").on("input", function() {
+			let fontSize = parseInt($(this).val());
+			$("#text-container").css("font-size", fontSize + "px");
+		});
+	</script>
+</body>
+
+</html>

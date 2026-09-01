@@ -7,59 +7,180 @@
 	<title>Compare</title>
 
 	<link rel="stylesheet" href="css/fonts.css">
-    <style>
-        html, body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            height: 100%;
-            background: black;
-            margin: 0;
-        }
+	<style>
+		html, body {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+			height: 100%;
+			background: black;
+			margin: 0;
+			overflow: hidden;
+		}
 
-        div {
-            font-size: 150px;
-            line-height: 1.1;
-            color: white;
-        }
-    </style>
+		body { transform: skewY(-10deg); }
+
+		#font-full-name {
+			font-family: sans-serif;
+			font-size: 60px;
+			color: white;
+		}
+
+		#text {
+			font-size: 250px;
+			line-height: 1.1;
+			color: white;
+		}
+	</style>
 </head>
 
 <body>
-    <div>
-        AMNPW<br>
-        01234567890:!
-    </div>
+	<div id="font-full-name"></div>
+	<div id="text">12:34PM NOW!</div>
 
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script>
-        var currentFont = 0;
-        const font1 = {
-            fontFamily: "Tombaugh Display",
-            fontWeight: "900",
-        }
-        const font2 = {
-            fontFamily: "Hades",
-            fontWeight: "700",
-        }
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+	<script>
+		const tombaughRegular = {
+			name: "Tombaugh",
+			weights: [
+				{
+					name: "b",
+					weight: "100",
+				},
+				{
+					name: "c",
+					weight: "300",
+				},
+				{
+					name: "d",
+					weight: "400",
+				},
+				{
+					name: "e",
+					weight: "500",
+				},
+				{
+					name: "f",
+					weight: "700",
+				},
+				{
+					name: "g",
+					weight: "900",
+				},
+			]
+		};
+		const tombaughDisplay = {
+			name: "Tombaugh Display",
+			weights: [
+				{
+					name: "b",
+					weight: "100",
+				},
+				{
+					name: "c",
+					weight: "300",
+				},
+				{
+					name: "d",
+					weight: "400",
+				},
+				{
+					name: "e",
+					weight: "500",
+				},
+				{
+					name: "f",
+					weight: "700",
+				},
+				{
+					name: "g",
+					weight: "900",
+				},
+			]
+		};
+		const hades = {
+			name: "Hades",
+			weights: [
+				{
+					name: "Tall Fat",
+					weight: "400",
+				},
+				{
+					name: "Short Skinny",
+					weight: "500",
+				},
+				{
+					name: "Short Fat",
+					weight: "600",
+				},
+				{
+					name: "Super Short Fat",
+					weight: "700",
+				}
+			]
+		}
 
-        function changeFont(font) {
-            $("div").css({
-                "font-family": font.fontFamily,
-                "font-weight": font.fontWeight
-            });
-        }
-        changeFont(font1);
+		const fonts = [
+			// Tall Fat
+			// {
+			// 	family: hades,
+			// 	weightIndex: 0
+			// },
+			// {
+			// 	family: tombaughDisplay,
+			// 	weightIndex: 1
+			// },
 
-        $(document).on("keypress", (e) => {
-            if (e.code == "Space") {
-                currentFont = (currentFont + 1) % 2;
-                console.log(currentFont);
-                changeFont((currentFont == 0) ? font1 : font2);
-            }
-        });
-    </script>
+			// Short Skinny
+			{
+				family: hades,
+				weightIndex: 1
+			},
+			{
+				family: tombaughDisplay,
+				weightIndex: 3
+			},
+
+			// Short Fat
+			// {
+			// 	family: hades,
+			// 	weightIndex: 2
+			// },
+			// {
+			// 	family: tombaughDisplay,
+			// 	weightIndex: 2
+			// },
+
+			// Super Short Fat
+			// {
+			// 	family: hades,
+			// 	weightIndex: 3
+			// },
+			// {
+			// 	family: tombaughDisplay,
+			// 	weightIndex: 5
+			// },
+		];
+		var currentFont = 0;
+
+		function changeFont(font) {
+			$("#font-full-name").html(`${font.family.name} ${font.family.weights[font.weightIndex].name}`);
+			$("#text").css({
+				"font-family": font.family.name,
+				"font-weight": font.family.weights[font.weightIndex].weight
+			});
+		}
+		changeFont(fonts[currentFont]);
+
+		$(document).on("keypress", (e) => {
+			if (e.code == "Space") {
+				currentFont = (currentFont + 1) % fonts.length;
+				changeFont(fonts[currentFont]);
+			}
+		});
+	</script>
 </body>
 
 </html>
